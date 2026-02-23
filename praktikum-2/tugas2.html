@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | Pemrogrman Web</title>
+</head>
+<body>
+<table> <tr>
+    <td>
+    <form action="" method="GET">
+        <div>
+            <h1> Formulir login</h1>
+            <label for="">Masukkan Nama:</label>
+            <input type="text" name="username"
+            placeholder="Namanya Siapa?">
+        </div>
+        
+        <div>
+             <label for="">Masukkan Email:</label>
+            <input type="text" name="email" placeholder="Masukkan Email Anda">
+        </div>
+        <label for="">Deskripsikan diri anda</label>
+        <div>
+            <textarea name="deskripsi" id="" rows="10" cols="30"></textarea>
+        </div>
+        <div>
+            <label>Jenis Kelamin:</label>
+            <input type="radio" name="pilihan" value="1">
+            Laki-Laki
+            <input type="radio" name="pilihan" value="2">
+            Perempuan
+        </div>
+       
+        <div>
+            <label>Hobi:</label>
+            <input type="checkbox" name="hobi" value="game"> Main Game
+            <input type="checkbox" name="hobi" value="berenang"> Berenang
+        </div>
+         <div>
+            <label>Pilih Kota</label>
+            <select name="kota" id="">
+                <option value="J">Jakarta</option>
+                <option value="B">Bekasi</option>
+                <option value="C">Cikarang</option>
+                <option value="K">Karawwang</option>
+            </select>
+        </div>
+
+      
+
+        <div>
+    <form action="upload.php" method="post"
+    enctype="multipart/form-data">
+            <label for="file">Pilih File:</label>
+            <input type="file" id="file" name="file">
+             <div>
+            <button type="submit">Daftar</button>
+        </div> 
+    </form>
+
+    </form>
+</td>
+</tr>
+    </table>
+</body>
+</html>
