@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Web Singaperbangsa</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <header>
+        <h1>Selamat datang di website singaperbangsa</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="content">
+            <h2>Formulir Pendaftaran</h2>
+            <p>silahkan isi formulir dibawah ini untuk mendaftar</p>
+
+            <form action="" method="get">
+            <div>
+            <h4 class="txt">Nama Lengkap:</h4>
+            <input type="text" name="username" class="inpt">
+            </div>
+
+            <div>
+                <h4>Email:</h4>
+                <input type='text' name="email" class="inpt">
+            </div>
+
+            <div>
+                <h4>Password:</h4>
+                <input type="password" name="password" class="inpt">
+            </div>
+
+            <div>
+                <h4>Jenis Kelamin:</h4>
+                <input type="radio" name="pilihan" value="1" class="form-group-jenisklmn">
+                Laki Laki
+                <input type="radio" name="pilihan" value="2" class="form-group-jenisklmn">
+                Perempuan
+            </div>
+
+            <div>
+                <h4>Hobi:</h4>
+                    <input type="checkbox" name="hobi" value="Musik"> Musik
+                    <input type="checkbox" name="hobi" value="Olahraga"> Olahraga
+                    <input type="checkbox" name="hobi" value="Membaca"> Membaca
+            </div>
+
+            <div class="form-group">
+                <label>Pilih Kota:</label>
+                <select class="inpt">
+                    <option>Jakarta</option>
+                    <option>Bandung</option>
+                    <option>Karawang</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Pesan Tambahan:</label>
+                <textarea class="inpt" rows="4" placeholder="Tulis pesan di sini..."></textarea>
+            </div>
+
+
+
+            <button class="btn", type="submit">Kirim</button>
+        </section>
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Bagian sidebar dapat berisi tautan, iklan, atau informasi tambahan.</p>
+        </aside>
+    </div>
+</form>
+    <footer>
+        <p>&copy; 2024 Halaaman Web Singaperbangsa Dibuat dengan CSS</p>
+    </footer>
+
+
+</body>
+</html>
