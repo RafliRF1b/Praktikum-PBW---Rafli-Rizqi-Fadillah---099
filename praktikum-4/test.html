@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Input Nilai Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Input Nilai Kuliah</h2>
+        
+        <div class="form-group">
+            <label for="nim">NIM Mahasiswa</label>
+            <input type="text" id="nim" placeholder="Masukkan NIM Anda..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="matkul">Mata Kuliah</label>
+            <select id="matkul">
+                <option value="">-- Pilih Mata Kuliah --</option>
+                <option value="Pemrograman berbasis web">Pemrograman berbasis web</option>
+                <option value="Rekayasa perangkat lunak">Rekayasa perangkat lunak</option>
+                <option value="Analisis desain algoritma">Analisis desain algoritma</option>
+                <option value="Sistem operasi">Sistem operasi</option>
+                <option value="Statistika dan probabilitas">Statistika dan probabilitas</option>
+                <option value="Kecerdasan Buatan">Kecerdasan Buatan</option>
+                <option value="Embedded intelligent system">Embedded intelligent system</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nilai">Nilai Mata Kuliah (0-100)</label>
+            <input type="number" id="nilai" placeholder="Contoh: 85" min="0" max="100">
+        </div>
+
+        <button onclick="cekNilai()">Cek Nilai</button>
+
+        <div id="hasil"></div>
+    </div>
+
+    <script>
+        function cekNilai() {
+            const nim = document.getElementById('nim').value;
+            const matkul = document.getElementById('matkul').value;
+            const nilaiInput = document.getElementById('nilai').value;
+            const hasilDiv = document.getElementById('hasil');
+            
+            const nilai = parseFloat(nilaiInput);
+            hasilDiv.style.display = "none";
+            hasilDiv.className = "";
+
+            //Validasi Input Kosong
+            if (!nim || !matkul || nilaiInput === "") {
+                hasilDiv.innerHTML = "Harap lengkapi semua data!";
+                hasilDiv.classList.add("error");
+                hasilDiv.style.display = "block";
+                return;
+            }
+
+            //Validasi Rentang Nilai (0 - 100)
+            if (nilai < 0 || nilai > 100) {
+                hasilDiv.innerHTML = "Nilai tidak valid!";
+                hasilDiv.classList.add("error");
+                hasilDiv.style.display = "block";
+                return;
+            }
+
+            //Penentuan Huruf Mutu dengan If-Else
+            let hurufMutu = "";
+            if (nilai >= 85) {
+                hurufMutu = "A";
+            } else if (nilai >= 75) {
+                hurufMutu = "B";
+            } else if (nilai >= 60) {
+                hurufMutu = "C";
+            } else if (nilai >= 45) {
+                hurufMutu = "D";
+            } else {
+                hurufMutu = "E";
+            }
+
+            //Tampilkan Hasil
+            hasilDiv.innerHTML = `
+                <strong>Hasil Evaluasi:</strong><br>
+                NIM: ${nim}<br>
+                MK: ${matkul}<br>
+                Huruf Mutu: <b>${hurufMutu}</b>
+            `;
+            hasilDiv.classList.add("success");
+            hasilDiv.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
